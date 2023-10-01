@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Akinator-like Game</title>
+  <style>
+    /* Add your CSS styles here for the game interface */
+  </style>
+</head>
+<body>
+  <div id="game">
+    <h1>Think of a Character</h1>
+    <p>Answer the questions below with "Yes" or "No."</p>
+    <div id="question"></div>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+    <button id="restartButton">Restart</button>
+  </div>
+  <script>
+    const questions = [
+      "Is the character fictional?",
+      "Is the character from a movie or TV show?",
+      "Is the character human?",
+      // Add more questions here
+    ];
+
+    let currentQuestionIndex = 0;
+
+    document.getElementById('yesButton').addEventListener('click', () => {
+      // Handle user's "Yes" response
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        // Ask the next question
+        displayQuestion();
+      } else {
+        // Make a guess or display a message
+      }
+    });
+
+    document.getElementById('noButton').addEventListener('click', () => {
+      // Handle user's "No" response
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        // Ask the next question
+        displayQuestion();
+      } else {
+        // Make a guess or display a message
+      }
+    });
+
+    document.getElementById('restartButton').addEventListener('click', () => {
+      // Restart the game
+      currentQuestionIndex = 0;
+      displayQuestion();
+    });
+
+    function displayQuestion() {
+      const questionElement = document.getElementById('question');
+      questionElement.textContent = questions[currentQuestionIndex];
+    }
+
+    // Initialize the game by displaying the first question
+    displayQuestion();
+  </script>
+</body>
+</html>
